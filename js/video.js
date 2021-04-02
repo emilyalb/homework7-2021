@@ -38,3 +38,36 @@ document.querySelector("#play").addEventListener("click", function() {
 console.log("Play Video");
 });
 
+document.querySelector("#skip").addEventListener("click", function(){
+     console.log("Original Time: " + video.currentTime); 
+        
+        if(video.currentTime < video.duration - 15){
+            video.currentTime += 15
+    }
+        else {
+            video.currentTime = 0
+        }
+                        
+}); 
+
+document.querySelector("#mute").addEventListener("click", function(){
+console.log("Muted"); 
+   
+    if (video.muted == false) {
+        video.muted = true;
+        document.querySelector("#mute").innerHTML = "Unmute";
+    }
+    else {
+        video.muted = false; 
+        document.querySelector("#mute").innerHTML = "Mute";
+    }
+});
+
+document.querySelector("#slider").addEventListener("change", function() {
+console.log(this.value)
+var slider = this.value; 
+video.volume = slider/100;
+document.querySelector("#volume").
+innerHTML=video.volume*100 + "%"
+
+}); 
