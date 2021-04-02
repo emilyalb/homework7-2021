@@ -71,3 +71,16 @@ document.querySelector("#volume").
 innerHTML=video.volume*100 + "%"
 
 }); 
+
+document.querySelector("#slower").addEventListener("click", function(){
+ console.log("Slow Down");
+ video.playbackRate *= .95; 
+ console.log(video.playbackRate); 
+}); 
+
+document.querySelector("#faster").addEventListener("click", function(){
+console.log("GO FASTER");
+video.playbackRate /= .95; 
+console.log(video.playbackRate); 
+}); 
+                                                   
